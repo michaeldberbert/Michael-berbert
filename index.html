@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michael Berbert — Adobe Alliance & Strategic Partnerships Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0b1628; --navy-mid: #132240; --navy-light: #1e3a5f;
+    --gold: #c9a84c; --gold-light: #e8c97a;
+    --cream: #f5f0e8; --slate: #8a9ab5;
+    --white: #ffffff; --text-body: #2c3e50; --section-alt: #f9f6f0;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'DM Sans',sans-serif; color:var(--text-body); background:var(--cream); overflow-x:hidden; }
+
+  /* NAV */
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(11,22,40,0.97); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,168,76,0.2); padding:0 3rem; display:flex; align-items:center; justify-content:space-between; height:70px; }
+  .nav-logo { font-family:'Playfair Display',serif; color:var(--gold); font-size:1.3rem; font-weight:700; text-decoration:none; }
+  .nav-links { display:flex; gap:2rem; list-style:none; }
+  .nav-links a { color:rgba(255,255,255,0.72); text-decoration:none; font-size:0.8rem; font-weight:500; letter-spacing:0.07em; text-transform:uppercase; transition:color 0.2s; }
+  .nav-links a:hover { color:var(--gold); }
+  .nav-cta { background:var(--gold); color:var(--navy) !important; padding:0.45rem 1.1rem; border-radius:4px; font-weight:600 !important; }
+  .nav-cta:hover { background:var(--gold-light) !important; }
+
+  /* HERO */
+  #hero { min-height:100vh; background:var(--navy); display:flex; align-items:center; position:relative; overflow:hidden; }
+  .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px); background-size:60px 60px; }
+  .hero-glow { position:absolute; top:-20%; right:-10%; width:600px; height:600px; background:radial-gradient(circle,rgba(201,168,76,0.1) 0%,transparent 70%); pointer-events:none; }
+  .hero-content { position:relative; z-index:2; max-width:1200px; margin:0 auto; padding:8rem 3rem 4rem; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+  .hero-eyebrow { font-family:'DM Mono',monospace; color:var(--gold); font-size:0.76rem; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:1.25rem; opacity:0; animation:fadeUp 0.7s 0.2s forwards; }
+  .hero-name { font-family:'Playfair Display',serif; color:var(--white); font-size:clamp(2.8rem,4.5vw,4.2rem); font-weight:900; line-height:1.05; margin-bottom:0.75rem; opacity:0; animation:fadeUp 0.7s 0.4s forwards; }
+  .hero-name span { color:var(--gold); }
+  .hero-tagline { color:var(--slate); font-size:1.02rem; line-height:1.8; font-weight:300; margin-bottom:2.5rem; opacity:0; animation:fadeUp 0.7s 0.6s forwards; }
+  .hero-buttons { display:flex; gap:1rem; flex-wrap:wrap; opacity:0; animation:fadeUp 0.7s 0.8s forwards; }
+  .btn-primary { background:var(--gold); color:var(--navy); padding:0.85rem 2rem; border-radius:4px; text-decoration:none; font-weight:600; font-size:0.88rem; letter-spacing:0.04em; transition:all 0.2s; border:2px solid var(--gold); }
+  .btn-primary:hover { background:var(--gold-light); border-color:var(--gold-light); }
+  .btn-outline { background:transparent; color:var(--white); padding:0.85rem 2rem; border-radius:4px; text-decoration:none; font-weight:500; font-size:0.88rem; border:2px solid rgba(255,255,255,0.25); transition:all 0.2s; }
+  .btn-outline:hover { border-color:var(--gold); color:var(--gold); }
+  .hero-stats { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; opacity:0; animation:fadeUp 0.7s 0.5s forwards; }
+  .stat-card { background:rgba(255,255,255,0.04); border:1px solid rgba(201,168,76,0.2); border-radius:8px; padding:1.75rem; position:relative; overflow:hidden; }
+  .stat-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),transparent); }
+  .stat-num { font-family:'Playfair Display',serif; font-size:2.1rem; font-weight:700; color:var(--gold); line-height:1; margin-bottom:0.4rem; }
+  .stat-label { color:rgba(255,255,255,0.48); font-size:0.78rem; line-height:1.4; }
+
+  /* SHARED */
+  section { padding:6rem 0; }
+  .container { max-width:1200px; margin:0 auto; padding:0 3rem; }
+  .section-eyebrow { font-family:'DM Mono',monospace; color:var(--gold); font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.75rem; }
+  .section-title { font-family:'Playfair Display',serif; font-size:clamp(1.85rem,3vw,2.55rem); font-weight:700; color:var(--navy); margin-bottom:1rem; line-height:1.2; }
+  .section-subtitle { color:#667; font-size:0.98rem; line-height:1.78; max-width:580px; margin-bottom:3rem; font-weight:300; }
+  .gold-line { width:48px; height:3px; background:var(--gold); margin-bottom:1.5rem; border-radius:2px; }
+
+  /* ABOUT */
+  #about { background:var(--white); }
+  .about-grid { display:grid; grid-template-columns:340px 1fr; gap:5rem; align-items:start; }
+  .about-portrait { position:sticky; top:100px; }
+  .portrait-frame { width:100%; aspect-ratio:3/4; background:linear-gradient(135deg,var(--navy),var(--navy-light)); border-radius:6px; overflow:hidden; position:relative; border:1px solid rgba(201,168,76,0.3); display:flex; align-items:center; justify-content:center; }
+  .portrait-frame img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; }
+  .portrait-initials { font-family:'Playfair Display',serif; font-size:5rem; color:var(--gold); font-weight:700; }
+  .portrait-badge { position:absolute; bottom:0; left:0; right:0; background:var(--gold); color:var(--navy); text-align:center; padding:0.7rem; font-weight:600; font-size:0.76rem; letter-spacing:0.08em; text-transform:uppercase; }
+  .about-text p { color:#445; line-height:1.85; margin-bottom:1.4rem; font-size:0.98rem; }
+  .about-highlights { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2rem; }
+  .highlight-item { display:flex; align-items:flex-start; gap:0.75rem; padding:1rem; background:var(--section-alt); border-radius:6px; border-left:3px solid var(--gold); }
+  .highlight-icon { font-size:1.15rem; flex-shrink:0; }
+  .highlight-text { font-size:0.84rem; color:#445; line-height:1.5; font-weight:500; }
+  .competencies { margin-top:2rem; }
+  .competencies-title { font-weight:700; color:var(--navy); font-size:0.82rem; text-transform:uppercase; letter-spacing:0.07em; margin-bottom:0.75rem; }
+  .tags-wrap { display:flex; flex-wrap:wrap; gap:0.45rem; }
+  .ctag { background:rgba(201,168,76,0.1); color:#7a6030; border:1px solid rgba(201,168,76,0.3); padding:0.25rem 0.7rem; border-radius:20px; font-size:0.72rem; font-weight:500; }
+
+  /* CAREER */
+  #career { background:var(--section-alt); }
+  .timeline { position:relative; padding-left:2rem; }
+  .timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(to bottom,var(--gold),rgba(201,168,76,0.1)); }
+  .timeline-item { position:relative; margin-bottom:3rem; padding-left:2rem; }
+  .timeline-dot { position:absolute; left:-2.55rem; top:0.4rem; width:14px; height:14px; background:var(--gold); border-radius:50%; border:3px solid var(--section-alt); box-shadow:0 0 0 2px var(--gold); }
+  .timeline-dot.current { background:var(--gold-light); box-shadow:0 0 0 2px var(--gold-light),0 0 16px rgba(232,201,122,0.4); }
+  .timeline-meta { font-family:'DM Mono',monospace; font-size:0.7rem; color:var(--gold); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.4rem; }
+  .timeline-role { font-family:'Playfair Display',serif; font-size:1.22rem; font-weight:700; color:var(--navy); margin-bottom:0.2rem; }
+  .timeline-company { font-weight:600; color:#556; margin-bottom:0.75rem; font-size:0.9rem; }
+  .timeline-desc { color:#667; line-height:1.75; font-size:0.9rem; }
+  .timeline-desc ul { padding-left:1.25rem; margin-top:0.5rem; }
+  .timeline-desc ul li { margin-bottom:0.45rem; }
+  .timeline-tags { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem; }
+  .tag { background:rgba(201,168,76,0.1); color:#7a6030; border:1px solid rgba(201,168,76,0.3); padding:0.25rem 0.7rem; border-radius:20px; font-size:0.71rem; font-weight:500; }
+  .edu-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:3rem; }
+  .edu-card { background:var(--white); border:1px solid rgba(0,0,0,0.07); border-radius:8px; padding:1.75rem; border-top:3px solid var(--gold); }
+
+  /* JOURNEY */
+  #journey { background:var(--white); }
+  .journey-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
+  .journey-milestones { display:flex; flex-direction:column; gap:1.5rem; }
+  .milestone { display:flex; gap:1.5rem; align-items:flex-start; padding:1.5rem; background:var(--section-alt); border-radius:8px; border:1px solid rgba(0,0,0,0.05); transition:border-color 0.2s,box-shadow 0.2s; }
+  .milestone:hover { border-color:rgba(201,168,76,0.35); box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+  .milestone-icon { width:46px; height:46px; background:linear-gradient(135deg,var(--navy),var(--navy-light)); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1.25rem; flex-shrink:0; }
+  .milestone-label { font-size:0.7rem; color:var(--gold); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.3rem; }
+  .milestone-title { font-weight:700; color:var(--navy); margin-bottom:0.4rem; font-size:0.98rem; }
+  .milestone-text { font-size:0.87rem; color:#667; line-height:1.65; }
+  .journey-visual { position:sticky; top:100px; }
+  .progress-card { background:var(--navy); border-radius:12px; padding:2.25rem; color:var(--white); margin-bottom:1.5rem; position:relative; overflow:hidden; }
+  .progress-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); }
+  .progress-title { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--gold); margin-bottom:1.5rem; }
+  .progress-stat { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.75rem; padding-bottom:0.75rem; border-bottom:1px solid rgba(255,255,255,0.07); }
+  .progress-stat:last-of-type { border-bottom:none; margin-bottom:0; }
+  .psl { font-size:0.82rem; color:var(--slate); }
+  .psv { font-weight:700; color:var(--white); font-size:0.98rem; }
+  .progress-bar-wrap { background:rgba(255,255,255,0.08); border-radius:20px; height:8px; margin-top:1.5rem; overflow:hidden; }
+  .progress-bar-fill { height:100%; background:linear-gradient(90deg,var(--gold),var(--gold-light)); border-radius:20px; width:0; transition:width 1.8s ease; }
+  .progress-bar-label { font-size:0.73rem; color:var(--slate); margin-top:0.5rem; }
+  .quote-card { background:var(--section-alt); border-left:4px solid var(--gold); padding:1.5rem 2rem; border-radius:0 8px 8px 0; font-style:italic; color:#445; line-height:1.75; font-size:0.98rem; }
+  .quote-card cite { display:block; margin-top:0.75rem; font-style:normal; font-weight:600; font-size:0.8rem; color:var(--gold); }
+
+  /* AI */
+  #ai { background:var(--navy); position:relative; overflow:hidden; }
+  .ai-bg-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px); background-size:40px 40px; }
+  #ai .section-title { color:var(--white); }
+  #ai .section-subtitle { color:var(--slate); }
+  .ai-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-bottom:2.5rem; }
+  .ai-card { background:rgba(255,255,255,0.04); border:1px solid rgba(201,168,76,0.15); border-radius:8px; padding:2rem; transition:border-color 0.2s,background 0.2s; }
+  .ai-card:hover { border-color:rgba(201,168,76,0.4); background:rgba(255,255,255,0.06); }
+  .ai-card-icon { font-size:1.8rem; margin-bottom:1rem; }
+  .ai-card-title { color:var(--white); font-weight:700; margin-bottom:0.5rem; font-size:0.98rem; }
+  .ai-card-text { color:var(--slate); font-size:0.85rem; line-height:1.65; }
+  .built-badge { display:inline-flex; align-items:center; gap:0.75rem; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.3); border-radius:8px; padding:1.25rem 2rem; color:var(--gold-light); font-size:0.88rem; }
+  .built-badge strong { color:var(--gold); font-weight:700; }
+
+  /* BLOG */
+  #blog { background:var(--section-alt); }
+  .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.75rem; }
+  .blog-card { background:var(--white); border-radius:8px; overflow:hidden; border:1px solid rgba(0,0,0,0.06); transition:transform 0.2s,box-shadow 0.2s; }
+  .blog-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,0.1); }
+  .blog-card-header { background:linear-gradient(135deg,var(--navy),var(--navy-light)); padding:1.75rem; position:relative; }
+  .blog-card-header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--gold); }
+  .blog-cat { font-family:'DM Mono',monospace; font-size:0.67rem; color:var(--gold); text-transform:uppercase; letter-spacing:0.15em; margin-bottom:0.5rem; }
+  .blog-title { font-family:'Playfair Display',serif; font-size:1.08rem; color:var(--white); font-weight:700; line-height:1.35; }
+  .blog-card-body { padding:1.5rem; }
+  .blog-excerpt { font-size:0.85rem; color:#667; line-height:1.65; margin-bottom:1rem; }
+  .blog-meta { display:flex; justify-content:space-between; align-items:center; font-size:0.75rem; color:#99a; }
+  .blog-read-more { color:var(--gold); text-decoration:none; font-weight:600; font-size:0.8rem; display:inline-flex; align-items:center; gap:0.3rem; transition:gap 0.2s; }
+  .blog-read-more:hover { gap:0.6rem; }
+
+  /* CONTACT */
+  #contact { background:var(--white); }
+  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
+  .contact-item { display:flex; align-items:flex-start; gap:1rem; margin-bottom:1.6rem; }
+  .contact-icon { width:42px; height:42px; background:var(--navy); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; }
+  .contact-detail strong { display:block; font-weight:600; color:var(--navy); margin-bottom:0.2rem; font-size:0.92rem; }
+  .contact-detail span, .contact-detail a { color:#667; font-size:0.86rem; }
+  .contact-detail a { color:var(--gold); text-decoration:none; }
+  .contact-detail a:hover { text-decoration:underline; }
+  .form-group { margin-bottom:1.1rem; }
+  .form-group label { display:block; font-size:0.76rem; font-weight:600; color:var(--navy); margin-bottom:0.4rem; letter-spacing:0.05em; text-transform:uppercase; }
+  .form-group input,.form-group textarea { width:100%; padding:0.82rem 1rem; background:var(--section-alt); border:1px solid rgba(0,0,0,0.12); border-radius:4px; font-family:'DM Sans',sans-serif; font-size:0.9rem; color:var(--navy); outline:none; transition:border-color 0.2s,box-shadow 0.2s; }
+  .form-group input:focus,.form-group textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(201,168,76,0.12); }
+  .form-group textarea { resize:vertical; min-height:115px; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  .btn-submit { background:var(--navy); color:var(--white); border:2px solid var(--navy); padding:0.88rem 2.5rem; border-radius:4px; font-family:'DM Sans',sans-serif; font-size:0.88rem; font-weight:600; cursor:pointer; width:100%; letter-spacing:0.04em; transition:all 0.2s; }
+  .btn-submit:hover { background:var(--gold); border-color:var(--gold); color:var(--navy); }
+
+  /* FOOTER */
+  footer { background:var(--navy); padding:2.5rem 3rem; border-top:1px solid rgba(201,168,76,0.15); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+  .footer-logo { font-family:'Playfair Display',serif; color:var(--gold); font-size:1.15rem; font-weight:700; }
+  .footer-copy { color:rgba(255,255,255,0.28); font-size:0.78rem; }
+  .footer-built { font-family:'DM Mono',monospace; font-size:0.68rem; color:rgba(201,168,76,0.42); letter-spacing:0.1em; }
+
+  /* ANIMATION */
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px);} to{opacity:1;transform:translateY(0);} }
+  .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.6s ease,transform 0.6s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* RESPONSIVE */
+  @media(max-width:960px){
+    nav{padding:0 1.5rem;} .nav-links{display:none;}
+    .hero-content,.about-grid,.journey-grid,.contact-grid{grid-template-columns:1fr;gap:3rem;}
+    .hero-stats{grid-template-columns:1fr 1fr;}
+    .ai-cards,.blog-grid,.edu-grid{grid-template-columns:1fr;}
+    .container{padding:0 1.5rem;}
+    .about-portrait,.journey-visual{position:static;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo">MB</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#career">Experience</a></li>
+    <li><a href="#journey">My Journey</a></li>
+    <li><a href="#ai">AI Collaboration</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact" class="nav-cta">Connect</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div>
+      <p class="hero-eyebrow">// Adobe Alliance & Strategic Partnerships Leader</p>
+      <h1 class="hero-name">Michael<br><span>Berbert</span></h1>
+      <p class="hero-tagline">15+ years building Adobe ecosystem partnerships — from inside Adobe Systems to Global Platinum SI leadership. Bilingual. MBA. And on the most important personal journey of my life.</p>
+      <div class="hero-buttons">
+        <a href="#career" class="btn-primary">View My Experience</a>
+        <a href="#blog" class="btn-outline">Investing Blog</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-num">15+</div>
+        <div class="stat-label">Years in the Adobe Ecosystem</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">4.2<span style="font-size:1.1rem">lbs</span></div>
+        <div class="stat-label">Lost — Day 16 of My Transformation</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">🥇</div>
+        <div class="stat-label">Global Platinum Adobe Partner Status</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Built Collaborating with Claude AI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-portrait">
+        <div class="portrait-frame">
+          <!--
+            ADD YOUR PHOTO:
+            1. Go to your LinkedIn profile
+            2. Right-click your headshot → "Open image in new tab"
+            3. Copy that URL
+            4. Replace the div below with:
+               <img src="PASTE_URL_HERE" alt="Michael Berbert">
+          -->
+          <div class="portrait-initials">MB</div>
+          <div class="portrait-badge">Saratoga Springs, Utah</div>
+        </div>
+      </div>
+
+      <div class="about-text reveal">
+        <p class="section-eyebrow">About Me</p>
+        <div class="gold-line"></div>
+        <h2 class="section-title">Adobe Ecosystem Expert. Strategic Leader. Always Improving.</h2>
+        <p>I'm Michael Berbert — a Strategic Alliance Director with over 15 years of deep Adobe ecosystem experience, having spent nearly a decade inside Adobe Systems itself before taking on progressive Director-level alliance roles at leading Adobe SIs and technology partners.</p>
+        <p>My career has been built on relationships, results, and relentless execution. I've elevated partner organizations from Bronze to Gold and all the way to <strong>Global Platinum</strong> — the highest tier in the Adobe Solution Partner Program — and I've consistently exceeded quota while doing it. I don't just manage partnerships; I transform them.</p>
+        <p>I hold an MBA from Utah State University and a BS in Business Management from Brigham Young University. I'm also fully bilingual in English and Spanish — a skill forged during a 24-month volunteer mission in Santiago, Chile that shaped my ability to build trust across cultures.</p>
+        <p>Beyond the professional arena, I'm engaged in one of the most meaningful challenges of my life: a significant personal health transformation. I'm applying the same systems thinking, discipline, and data-driven rigor that drives my professional results to my own wellbeing — and the results are already showing.</p>
+        <p>This website itself is a proof of concept for something I believe deeply: that AI collaboration is the defining professional skill of the next decade. Every element here was built in partnership with Claude, Anthropic's AI.</p>
+
+        <div class="about-highlights">
+          <div class="highlight-item"><div class="highlight-icon">🤝</div><div class="highlight-text">Adobe Alliance & Channel Expert</div></div>
+          <div class="highlight-item"><div class="highlight-icon">🌎</div><div class="highlight-text">Bilingual: English & Spanish</div></div>
+          <div class="highlight-item"><div class="highlight-icon">📈</div><div class="highlight-text">Active Investor & Market Thinker</div></div>
+          <div class="highlight-item"><div class="highlight-icon">🤖</div><div class="highlight-text">AI Collaboration Advocate</div></div>
+        </div>
+
+        <div class="competencies">
+          <div class="competencies-title">Core Competencies</div>
+          <div class="tags-wrap">
+            <span class="ctag">Adobe Experience Cloud</span><span class="ctag">AEM</span><span class="ctag">AEP</span>
+            <span class="ctag">Marketo</span><span class="ctag">Workfront</span><span class="ctag">Analytics</span>
+            <span class="ctag">Target</span><span class="ctag">Commerce</span>
+            <span class="ctag">Alliance Management</span><span class="ctag">Joint GTM Strategy</span>
+            <span class="ctag">Deal Registration</span><span class="ctag">Partner Tier Advancement</span>
+            <span class="ctag">Pipeline Creation</span><span class="ctag">Executive Relationships</span>
+            <span class="ctag">Salesforce</span><span class="ctag">HubSpot</span><span class="ctag">English / Spanish</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section id="career">
+  <div class="container">
+    <p class="section-eyebrow reveal">Career & Experience</p>
+    <div class="gold-line reveal"></div>
+    <h2 class="section-title reveal">15+ Years Inside the Adobe Ecosystem</h2>
+    <p class="section-subtitle reveal">From pioneering a new partner sales role inside Adobe to achieving Global Platinum status at leading SIs — a career defined by trust, execution, and results.</p>
+
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot current"></div>
+        <div class="timeline-meta">January 2025 — Present</div>
+        <div class="timeline-role">Strategic Alliance Director</div>
+        <div class="timeline-company">NextRow · Remote</div>
+        <div class="timeline-desc"><ul>
+          <li>Driving GTM transformation from legacy staff augmentation to a full-service Adobe Experience Cloud implementation and support practice.</li>
+          <li>Elevated NextRow's Adobe partnership from <strong>Bronze to Gold tier</strong> within the first year, unlocking new co-sell opportunities and deal registration benefits.</li>
+          <li>Revamped the deal registration process, significantly increasing benefit payouts received from Adobe.</li>
+          <li>Partnered with Inside and Outside Sales to build and prioritize target account lists, accelerating pipeline creation.</li>
+          <li>Conducted structured surveys with Adobe Sales and Account Management teams to identify partner ecosystem gaps and inform new service offerings.</li>
+        </ul></div>
+        <div class="timeline-tags"><span class="tag">GTM Transformation</span><span class="tag">Bronze → Gold</span><span class="tag">Deal Registration</span><span class="tag">Pipeline Acceleration</span></div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">November 2021 — February 2023</div>
+        <div class="timeline-role">Senior Director of Strategic Alliances</div>
+        <div class="timeline-company">TA Digital · Remote</div>
+        <div class="timeline-desc"><ul>
+          <li>Led joint pipeline creation and co-sell motions with Adobe across AEP, AEM, Analytics, Target, and Marketo.</li>
+          <li>Spearheaded the <strong>Content Factory cross-practice offering</strong> (AEM + Workfront), creating a differentiated solution aligned to Adobe's priority plays.</li>
+          <li>Empowered sales and delivery teams to identify and develop cross-sell opportunities within existing accounts.</li>
+          <li>Coordinated joint marketing programs with Adobe to generate pipeline and elevate TA Digital's visibility in the partner ecosystem.</li>
+        </ul></div>
+        <div class="timeline-tags"><span class="tag">Co-Sell Motions</span><span class="tag">Content Factory</span><span class="tag">AEP</span><span class="tag">AEM</span><span class="tag">Marketo</span></div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">April 2021 — November 2021</div>
+        <div class="timeline-role">Adobe Alliance & Channel Manager</div>
+        <div class="timeline-company">Coveo · Remote</div>
+        <div class="timeline-desc"><ul>
+          <li>Built and maintained relationships with Adobe's sales, partner, and solutions consulting teams, increasing partner-sourced opportunities.</li>
+          <li>Recruited and onboarded new partners within the Adobe ecosystem, expanding the partner channel.</li>
+          <li>Advanced the Coveo–Adobe partnership, including collaboration on the AEM connector integration.</li>
+        </ul></div>
+        <div class="timeline-tags"><span class="tag">Channel Management</span><span class="tag">Partner Recruitment</span><span class="tag">AEM Integration</span></div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">April 2019 — April 2021</div>
+        <div class="timeline-role">Director of Strategic Alliances</div>
+        <div class="timeline-company">TA Digital · Remote</div>
+        <div class="timeline-desc"><ul>
+          <li>Became the <strong>first Adobe partner to earn and maintain 6 Marketing Cloud Specializations</strong>, differentiating TA Digital in a highly competitive market.</li>
+          <li>Attained and maintained <strong>Global Platinum Partner Status</strong> — the highest tier in the Adobe Solution Partner Program.</li>
+          <li>Cultivated strategic relationships with Adobe and Acquia to drive pipeline growth across digital experience practices.</li>
+          <li>Authored monthly partner newsletters showcasing capabilities, wins, and partnership milestones.</li>
+        </ul></div>
+        <div class="timeline-tags"><span class="tag">Global Platinum Status</span><span class="tag">6 Specializations</span><span class="tag">Acquia</span><span class="tag">Sales Enablement</span></div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">December 2010 — April 2019</div>
+        <div class="timeline-role">Enterprise Partner Sales Manager</div>
+        <div class="timeline-company">Adobe Systems · Lehi, UT</div>
+        <div class="timeline-desc"><ul>
+          <li>Piloted a newly created partner sales position that was <strong>expanded within one year</strong> due to early results; mentored additional hires as the role scaled.</li>
+          <li>Consistently exceeded targets: <strong>129% of quota (2011) · 102% (2012) · 117% (2015) · 100% (2017).</strong></li>
+          <li>Developed and managed a robust partner pipeline, cultivating relationships with new and existing partners to achieve joint revenue goals.</li>
+          <li>Formulated and executed strategic business plans with partner firms aligned to mutual growth priorities and revenue targets.</li>
+          <li>Skillfully negotiated new and renewal Limited Scope Reseller Agreements, directly contributing to quota over-achievement.</li>
+          <li>Orchestrated joint marketing events and campaigns with partners to generate new pipeline.</li>
+        </ul></div>
+        <div class="timeline-tags"><span class="tag">Adobe Systems</span><span class="tag">129% Quota</span><span class="tag">Partner Pipeline</span><span class="tag">Reseller Agreements</span><span class="tag">8+ Years</span></div>
+      </div>
+
+    </div>
+
+    <div class="edu-grid reveal">
+      <div class="edu-card">
+        <div style="font-size:1.4rem;margin-bottom:0.75rem;">🎓</div>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;color:var(--navy);margin-bottom:0.25rem;font-size:1.1rem;">Master of Business Administration</div>
+        <div style="color:#556;font-size:0.9rem;font-weight:600;">Utah State University</div>
+        <div style="color:#889;font-size:0.8rem;margin-top:0.2rem;">Logan, UT</div>
+      </div>
+      <div class="edu-card">
+        <div style="font-size:1.4rem;margin-bottom:0.75rem;">🎓</div>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;color:var(--navy);margin-bottom:0.25rem;font-size:1.1rem;">BS, Business Management</div>
+        <div style="color:#556;font-size:0.9rem;font-weight:600;">Brigham Young University</div>
+        <div style="color:#889;font-size:0.8rem;margin-top:0.2rem;">Provo, UT</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEIGHT LOSS JOURNEY -->
+<section id="journey">
+  <div class="container">
+    <div class="journey-grid">
+      <div>
+        <p class="section-eyebrow reveal">Personal Journey</p>
+        <div class="gold-line reveal"></div>
+        <h2 class="section-title reveal">The Hardest Project I've Ever Led</h2>
+        <p class="section-subtitle reveal">On April 23, 2026 I stepped on the scale at 401.2 lbs and committed to change. Sixteen days later I'm at 397 — and I'm just getting started.</p>
+
+        <div class="journey-milestones">
+          <div class="milestone reveal">
+            <div class="milestone-icon">🔍</div>
+            <div>
+              <div class="milestone-label">April 23, 2026 — Day One</div>
+              <div class="milestone-title">The Starting Line: 401.2 lbs</div>
+              <p class="milestone-text">Every transformation starts with honest self-assessment. Like a project kickoff, the first step was acknowledging exactly where I was — not where I wished I was — and committing fully to the path forward.</p>
+            </div>
+          </div>
+          <div class="milestone reveal">
+            <div class="milestone-icon">🗺️</div>
+            <div>
+              <div class="milestone-label">The Strategy</div>
+              <div class="milestone-title">Applying Systems Thinking to Health</div>
+              <p class="milestone-text">I approach my health the same way I approach a GTM strategy: define clear metrics, eliminate what doesn't work, double down on what does. Nutrition, movement, sleep, and mindset as interconnected systems — not isolated habits.</p>
+            </div>
+          </div>
+          <div class="milestone reveal">
+            <div class="milestone-icon">📊</div>
+            <div>
+              <div class="milestone-label">The Data</div>
+              <div class="milestone-title">Measuring What Matters</div>
+              <p class="milestone-text">Tracking everything. The same analytical rigor I bring to partner pipeline and quota achievement is now applied to calories, movement, energy, and recovery. Data removes emotion and lets results guide the way.</p>
+            </div>
+          </div>
+          <div class="milestone reveal">
+            <div class="milestone-icon">📅</div>
+            <div>
+              <div class="milestone-label">May 9, 2026 — Day 16</div>
+              <div class="milestone-title">397 lbs — 4.2 lbs Down & Momentum Building</div>
+              <p class="milestone-text">Early days, but the direction is right and the habits are forming. Every pound lost is a proof point. The discipline required to lead this journey is the same discipline that drives results in every other area of life.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-visual reveal">
+        <div class="progress-card">
+          <div class="progress-title">📊 Live Journey Stats</div>
+          <div class="progress-stat"><span class="psl">Start Weight (Apr 23, 2026)</span><span class="psv">401.2 lbs</span></div>
+          <div class="progress-stat"><span class="psl">Current Weight (May 9, 2026)</span><span class="psv" style="color:var(--gold-light);">397.0 lbs</span></div>
+          <div class="progress-stat"><span class="psl">Lost So Far</span><span class="psv" style="color:#7ecf7e;">↓ 4.2 lbs</span></div>
+          <div class="progress-stat"><span class="psl">Days In</span><span class="psv">16 Days</span></div>
+          <div class="progress-stat"><span class="psl">Avg Loss / Day</span><span class="psv">~0.26 lbs</span></div>
+          <div class="progress-stat"><span class="psl">Momentum</span><span class="psv" style="color:var(--gold-light);">✓ Active & Trending Down</span></div>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" id="progressBar"></div>
+          </div>
+          <div class="progress-bar-label">Day 16 of the journey — 4.2 lbs in the right direction</div>
+        </div>
+        <blockquote class="quote-card">
+          "The same discipline that earns a Global Platinum partnership is what transforms a life. Define the goal. Build the system. Execute relentlessly. Let the data lead."
+          <cite>— Michael Berbert</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI COLLABORATION -->
+<section id="ai">
+  <div class="ai-bg-grid"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <p class="section-eyebrow reveal">AI Collaboration</p>
+    <div class="gold-line reveal"></div>
+    <h2 class="section-title reveal">Built With Claude. Powered by Partnership.</h2>
+    <p class="section-subtitle reveal">This entire website was conceived, designed, and built in collaboration with Claude — Anthropic's AI. It's not just a portfolio; it's a live proof of concept for the defining professional skill of the next decade.</p>
+    <div class="ai-cards">
+      <div class="ai-card reveal">
+        <div class="ai-card-icon">🧠</div>
+        <div class="ai-card-title">Strategic AI Direction</div>
+        <p class="ai-card-text">Effective AI collaboration is a leadership skill — no different from directing a high-performing team. Knowing what to ask, how to refine, and when to push back is what separates good outputs from extraordinary ones.</p>
+      </div>
+      <div class="ai-card reveal">
+        <div class="ai-card-icon">⚡</div>
+        <div class="ai-card-title">Compressed Time-to-Value</div>
+        <p class="ai-card-text">A professional-grade, fully personalized website — built in a single session using my own resume and personal data. Output that once required weeks of agency work is now possible in hours with the right human-AI partnership.</p>
+      </div>
+      <div class="ai-card reveal">
+        <div class="ai-card-icon">🔄</div>
+        <div class="ai-card-title">Iterative, Agile Execution</div>
+        <p class="ai-card-text">Like any great GTM motion, this was built through rapid iteration: clear direction, fast output, honest feedback, refined results. The same loop that drives partnership success drives AI collaboration success.</p>
+      </div>
+    </div>
+    <div class="built-badge reveal">
+      <span style="font-size:1.5rem;">🤖</span>
+      <span>This site was <strong>100% built in collaboration with Claude</strong> by Anthropic — a live demonstration of AI-human partnership delivering real, professional value.</span>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="container">
+    <p class="section-eyebrow reveal">Investing Blog</p>
+    <div class="gold-line reveal"></div>
+    <h2 class="section-title reveal">Market Insights & Investment Thinking</h2>
+    <p class="section-subtitle reveal">Ongoing thoughts on markets, technology investing, and capital allocation — written with the same rigor I bring to partnership strategy.</p>
+    <div class="blog-grid">
+      <div class="blog-card reveal">
+        <div class="blog-card-header">
+          <div class="blog-cat">AI Investing</div>
+          <div class="blog-title">Why AI Infrastructure Is the Real Play Right Now</div>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-excerpt">Everyone is chasing AI application companies. The durable value creation is happening one layer down — in compute, networking, and foundational model infrastructure.</p>
+          <div class="blog-meta"><span>Coming Soon</span><a href="#" class="blog-read-more">Read More →</a></div>
+        </div>
+      </div>
+      <div class="blog-card reveal">
+        <div class="blog-card-header">
+          <div class="blog-cat">Market Analysis</div>
+          <div class="blog-title">The Sectors I'm Watching in 2026</div>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-excerpt">A breakdown of industries showing asymmetric risk/reward potential given current macro conditions and the accelerating AI adoption curve.</p>
+          <div class="blog-meta"><span>Coming Soon</span><a href="#" class="blog-read-more">Read More →</a></div>
+        </div>
+      </div>
+      <div class="blog-card reveal">
+        <div class="blog-card-header">
+          <div class="blog-cat">Portfolio Strategy</div>
+          <div class="blog-title">How I Think About Long-Term Portfolio Construction</div>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-excerpt">My framework for building a portfolio designed to compound over decades — balancing conviction positions with risk management and appropriate diversification.</p>
+          <div class="blog-meta"><span>Coming Soon</span><a href="#" class="blog-read-more">Read More →</a></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem;" class="reveal">
+      <p style="color:#889;font-size:0.86rem;margin-bottom:1rem;">Full blog launching soon. Enter your email to be notified when the first post goes live.</p>
+      <div style="display:flex;gap:0.75rem;justify-content:center;max-width:420px;margin:0 auto;">
+        <input type="email" placeholder="your@email.com" style="flex:1;padding:0.75rem 1rem;border:1px solid rgba(0,0,0,0.15);border-radius:4px;font-family:inherit;font-size:0.86rem;outline:none;background:var(--white);">
+        <button class="btn-primary" style="border:none;cursor:pointer;white-space:nowrap;padding:0.75rem 1.5rem;">Notify Me</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="section-eyebrow">Get In Touch</p>
+        <div class="gold-line"></div>
+        <h2 class="section-title">Let's Connect</h2>
+        <p style="color:#667;line-height:1.78;margin-bottom:2.5rem;font-size:0.96rem;">Whether you want to discuss Adobe partnerships, AI collaboration, investing, or my personal journey — I'd love to hear from you.</p>
+
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-detail"><strong>Location</strong><span>Saratoga Springs, Utah</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-detail"><strong>Email</strong><a href="mailto:michaeldberbert@gmail.com">michaeldberbert@gmail.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💼</div>
+          <div class="contact-detail"><strong>LinkedIn</strong><a href="https://www.linkedin.com/in/michael-berbert" target="_blank" rel="noopener">linkedin.com/in/michael-berbert</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-detail"><strong>Phone</strong><a href="tel:8017627162">(801) 762-7162</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🌎</div>
+          <div class="contact-detail"><strong>Languages</strong><span>English & Spanish (Fluent)</span></div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div style="background:var(--section-alt);padding:2.5rem;border-radius:8px;border:1px solid rgba(0,0,0,0.06);">
+          <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:1.5rem;font-size:1.2rem;">Send a Message</h3>
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" placeholder="John"></div>
+            <div class="form-group"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+          </div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="john@example.com"></div>
+          <div class="form-group"><label>Subject</label><input type="text" placeholder="What's on your mind?"></div>
+          <div class="form-group"><label>Message</label><textarea placeholder="Tell me more..."></textarea></div>
+          <button class="btn-submit">Send Message →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Michael Berbert</div>
+  <div class="footer-copy">© 2026 Michael Berbert · Saratoga Springs, UT · michaeldberbert@gmail.com</div>
+  <div class="footer-built">// BUILT WITH CLAUDE AI BY ANTHROPIC</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Progress bar animation
+  const barObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting) {
+        // 4.2 lbs lost, displaying as early-stage momentum indicator
+        document.getElementById('progressBar').style.width = '4.2%';
+      }
+    });
+  }, {threshold: 0.5});
+  const bar = document.getElementById('progressBar');
+  if(bar) barObs.observe(bar);
+
+  // Active nav
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if(window.scrollY >= s.offsetTop - 100) cur = s.id; });
+    navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--gold)' : ''; });
+  });
+</script>
+</body>
+</html>
