@@ -9,124 +9,126 @@
 <style>
   :root {
     --navy: #0b1628; --navy-mid: #132240; --navy-light: #1e3a5f;
-    --gold: #c9a84c; --gold-light: #e8c97a;
-    --cream: #f5f0e8; --slate: #8a9ab5;
-    --white: #ffffff; --text-body: #2c3e50; --section-alt: #f9f6f0;
+    --silver: #b0b8c4;
+    --silver-light: #d4dae2;
+    --silver-bright: #e8ecf0;
+    --cream: #f4f5f7; --slate: #8a9ab5;
+    --white: #ffffff; --text-body: #2c3e50; --section-alt: #f0f2f5;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
   body { font-family:'DM Sans',sans-serif; color:var(--text-body); background:var(--cream); overflow-x:hidden; }
 
   /* NAV */
-  nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(11,22,40,0.97); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,168,76,0.2); padding:0 3rem; display:flex; align-items:center; justify-content:space-between; height:70px; }
-  .nav-logo { font-family:'Playfair Display',serif; color:var(--gold); font-size:1.3rem; font-weight:700; text-decoration:none; }
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(11,22,40,0.97); backdrop-filter:blur(12px); border-bottom:1px solid rgba(176,184,196,0.2); padding:0 3rem; display:flex; align-items:center; justify-content:space-between; height:70px; }
+  .nav-logo { font-family:'Playfair Display',serif; color:var(--silver-light); font-size:1.3rem; font-weight:700; text-decoration:none; }
   .nav-links { display:flex; gap:2rem; list-style:none; }
   .nav-links a { color:rgba(255,255,255,0.72); text-decoration:none; font-size:0.8rem; font-weight:500; letter-spacing:0.07em; text-transform:uppercase; transition:color 0.2s; }
-  .nav-links a:hover { color:var(--gold); }
-  .nav-cta { background:var(--gold); color:var(--navy) !important; padding:0.45rem 1.1rem; border-radius:4px; font-weight:600 !important; }
-  .nav-cta:hover { background:var(--gold-light) !important; }
+  .nav-links a:hover { color:var(--silver-light); }
+  .nav-cta { background:var(--silver); color:var(--navy) !important; padding:0.45rem 1.1rem; border-radius:4px; font-weight:600 !important; }
+  .nav-cta:hover { background:var(--silver-bright) !important; }
 
   /* HERO */
   #hero { min-height:100vh; background:var(--navy); display:flex; align-items:center; position:relative; overflow:hidden; }
-  .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px); background-size:60px 60px; }
-  .hero-glow { position:absolute; top:-20%; right:-10%; width:600px; height:600px; background:radial-gradient(circle,rgba(201,168,76,0.1) 0%,transparent 70%); pointer-events:none; }
+  .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(176,184,196,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(176,184,196,0.05) 1px,transparent 1px); background-size:60px 60px; }
+  .hero-glow { position:absolute; top:-20%; right:-10%; width:600px; height:600px; background:radial-gradient(circle,rgba(176,184,196,0.1) 0%,transparent 70%); pointer-events:none; }
   .hero-content { position:relative; z-index:2; max-width:1200px; margin:0 auto; padding:8rem 3rem 4rem; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
-  .hero-eyebrow { font-family:'DM Mono',monospace; color:var(--gold); font-size:0.76rem; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:1.25rem; opacity:0; animation:fadeUp 0.7s 0.2s forwards; }
+  .hero-eyebrow { font-family:'DM Mono',monospace; color:var(--silver); font-size:0.76rem; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:1.25rem; opacity:0; animation:fadeUp 0.7s 0.2s forwards; }
   .hero-name { font-family:'Playfair Display',serif; color:var(--white); font-size:clamp(2.8rem,4.5vw,4.2rem); font-weight:900; line-height:1.05; margin-bottom:0.75rem; opacity:0; animation:fadeUp 0.7s 0.4s forwards; }
-  .hero-name span { color:var(--gold); }
+  .hero-name span { color:var(--silver-light); }
   .hero-tagline { color:var(--slate); font-size:1.02rem; line-height:1.8; font-weight:300; margin-bottom:2.5rem; opacity:0; animation:fadeUp 0.7s 0.6s forwards; }
   .hero-buttons { display:flex; gap:1rem; flex-wrap:wrap; opacity:0; animation:fadeUp 0.7s 0.8s forwards; }
-  .btn-primary { background:var(--gold); color:var(--navy); padding:0.85rem 2rem; border-radius:4px; text-decoration:none; font-weight:600; font-size:0.88rem; letter-spacing:0.04em; transition:all 0.2s; border:2px solid var(--gold); }
-  .btn-primary:hover { background:var(--gold-light); border-color:var(--gold-light); }
+  .btn-primary { background:var(--silver); color:var(--navy); padding:0.85rem 2rem; border-radius:4px; text-decoration:none; font-weight:600; font-size:0.88rem; letter-spacing:0.04em; transition:all 0.2s; border:2px solid var(--silver); }
+  .btn-primary:hover { background:var(--silver-bright); border-color:var(--silver-bright); }
   .btn-outline { background:transparent; color:var(--white); padding:0.85rem 2rem; border-radius:4px; text-decoration:none; font-weight:500; font-size:0.88rem; border:2px solid rgba(255,255,255,0.25); transition:all 0.2s; }
-  .btn-outline:hover { border-color:var(--gold); color:var(--gold); }
+  .btn-outline:hover { border-color:var(--silver-light); color:var(--silver-light); }
   .hero-stats { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; opacity:0; animation:fadeUp 0.7s 0.5s forwards; }
-  .stat-card { background:rgba(255,255,255,0.04); border:1px solid rgba(201,168,76,0.2); border-radius:8px; padding:1.75rem; position:relative; overflow:hidden; }
-  .stat-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),transparent); }
-  .stat-num { font-family:'Playfair Display',serif; font-size:2.1rem; font-weight:700; color:var(--gold); line-height:1; margin-bottom:0.4rem; }
+  .stat-card { background:rgba(255,255,255,0.04); border:1px solid rgba(176,184,196,0.2); border-radius:8px; padding:1.75rem; position:relative; overflow:hidden; }
+  .stat-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--silver),transparent); }
+  .stat-num { font-family:'Playfair Display',serif; font-size:2.1rem; font-weight:700; color:var(--silver-light); line-height:1; margin-bottom:0.4rem; }
   .stat-label { color:rgba(255,255,255,0.48); font-size:0.78rem; line-height:1.4; }
 
   /* SHARED */
   section { padding:6rem 0; }
   .container { max-width:1200px; margin:0 auto; padding:0 3rem; }
-  .section-eyebrow { font-family:'DM Mono',monospace; color:var(--gold); font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.75rem; }
+  .section-eyebrow { font-family:'DM Mono',monospace; color:var(--silver); font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.75rem; }
   .section-title { font-family:'Playfair Display',serif; font-size:clamp(1.85rem,3vw,2.55rem); font-weight:700; color:var(--navy); margin-bottom:1rem; line-height:1.2; }
   .section-subtitle { color:#667; font-size:0.98rem; line-height:1.78; max-width:580px; margin-bottom:3rem; font-weight:300; }
-  .gold-line { width:48px; height:3px; background:var(--gold); margin-bottom:1.5rem; border-radius:2px; }
+  .silver-line { width:48px; height:3px; background:linear-gradient(90deg,var(--silver),var(--silver-light)); margin-bottom:1.5rem; border-radius:2px; }
 
   /* ABOUT */
   #about { background:var(--white); }
   .about-grid { display:grid; grid-template-columns:340px 1fr; gap:5rem; align-items:start; }
   .about-portrait { position:sticky; top:100px; }
-  .portrait-frame { width:100%; aspect-ratio:3/4; background:linear-gradient(135deg,var(--navy),var(--navy-light)); border-radius:6px; overflow:hidden; position:relative; border:1px solid rgba(201,168,76,0.3); display:flex; align-items:center; justify-content:center; }
-  .portrait-frame img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; }
-  .portrait-initials { font-family:'Playfair Display',serif; font-size:5rem; color:var(--gold); font-weight:700; }
-  .portrait-badge { position:absolute; bottom:0; left:0; right:0; background:var(--gold); color:var(--navy); text-align:center; padding:0.7rem; font-weight:600; font-size:0.76rem; letter-spacing:0.08em; text-transform:uppercase; }
+  .portrait-frame { width:100%; aspect-ratio:3/4; background:linear-gradient(135deg,var(--navy),var(--navy-light)); border-radius:6px; overflow:hidden; position:relative; border:1px solid rgba(176,184,196,0.3); display:flex; align-items:center; justify-content:center; }
+  .portrait-frame img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+  .portrait-badge { position:absolute; bottom:0; left:0; right:0; background:var(--silver); color:var(--navy); text-align:center; padding:0.7rem; font-weight:600; font-size:0.76rem; letter-spacing:0.08em; text-transform:uppercase; }
   .about-text p { color:#445; line-height:1.85; margin-bottom:1.4rem; font-size:0.98rem; }
   .about-highlights { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2rem; }
-  .highlight-item { display:flex; align-items:flex-start; gap:0.75rem; padding:1rem; background:var(--section-alt); border-radius:6px; border-left:3px solid var(--gold); }
+  .highlight-item { display:flex; align-items:flex-start; gap:0.75rem; padding:1rem; background:var(--section-alt); border-radius:6px; border-left:3px solid var(--silver); }
   .highlight-icon { font-size:1.15rem; flex-shrink:0; }
   .highlight-text { font-size:0.84rem; color:#445; line-height:1.5; font-weight:500; }
   .competencies { margin-top:2rem; }
   .competencies-title { font-weight:700; color:var(--navy); font-size:0.82rem; text-transform:uppercase; letter-spacing:0.07em; margin-bottom:0.75rem; }
   .tags-wrap { display:flex; flex-wrap:wrap; gap:0.45rem; }
-  .ctag { background:rgba(201,168,76,0.1); color:#7a6030; border:1px solid rgba(201,168,76,0.3); padding:0.25rem 0.7rem; border-radius:20px; font-size:0.72rem; font-weight:500; }
+  .ctag { background:rgba(176,184,196,0.15); color:#3a4a5a; border:1px solid rgba(176,184,196,0.4); padding:0.25rem 0.7rem; border-radius:20px; font-size:0.72rem; font-weight:500; }
 
   /* CAREER */
   #career { background:var(--section-alt); }
   .timeline { position:relative; padding-left:2rem; }
-  .timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(to bottom,var(--gold),rgba(201,168,76,0.1)); }
+  .timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(to bottom,var(--silver),rgba(176,184,196,0.1)); }
   .timeline-item { position:relative; margin-bottom:3rem; padding-left:2rem; }
-  .timeline-dot { position:absolute; left:-2.55rem; top:0.4rem; width:14px; height:14px; background:var(--gold); border-radius:50%; border:3px solid var(--section-alt); box-shadow:0 0 0 2px var(--gold); }
-  .timeline-dot.current { background:var(--gold-light); box-shadow:0 0 0 2px var(--gold-light),0 0 16px rgba(232,201,122,0.4); }
-  .timeline-meta { font-family:'DM Mono',monospace; font-size:0.7rem; color:var(--gold); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.4rem; }
+  .timeline-dot { position:absolute; left:-2.55rem; top:0.4rem; width:14px; height:14px; background:var(--silver); border-radius:50%; border:3px solid var(--section-alt); box-shadow:0 0 0 2px var(--silver); }
+  .timeline-dot.current { background:var(--silver-bright); box-shadow:0 0 0 2px var(--silver-light),0 0 16px rgba(212,218,226,0.5); }
+  .timeline-meta { font-family:'DM Mono',monospace; font-size:0.7rem; color:var(--silver); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.4rem; }
   .timeline-role { font-family:'Playfair Display',serif; font-size:1.22rem; font-weight:700; color:var(--navy); margin-bottom:0.2rem; }
   .timeline-company { font-weight:600; color:#556; margin-bottom:0.75rem; font-size:0.9rem; }
   .timeline-desc { color:#667; line-height:1.75; font-size:0.9rem; }
   .timeline-desc ul { padding-left:1.25rem; margin-top:0.5rem; }
   .timeline-desc ul li { margin-bottom:0.45rem; }
   .timeline-tags { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem; }
-  .tag { background:rgba(201,168,76,0.1); color:#7a6030; border:1px solid rgba(201,168,76,0.3); padding:0.25rem 0.7rem; border-radius:20px; font-size:0.71rem; font-weight:500; }
+  .tag { background:rgba(176,184,196,0.15); color:#3a4a5a; border:1px solid rgba(176,184,196,0.4); padding:0.25rem 0.7rem; border-radius:20px; font-size:0.71rem; font-weight:500; }
   .edu-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:3rem; }
-  .edu-card { background:var(--white); border:1px solid rgba(0,0,0,0.07); border-radius:8px; padding:1.75rem; border-top:3px solid var(--gold); }
+  .edu-card { background:var(--white); border:1px solid rgba(0,0,0,0.07); border-radius:8px; padding:1.75rem; border-top:3px solid var(--silver); }
 
   /* JOURNEY */
   #journey { background:var(--white); }
   .journey-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
   .journey-milestones { display:flex; flex-direction:column; gap:1.5rem; }
   .milestone { display:flex; gap:1.5rem; align-items:flex-start; padding:1.5rem; background:var(--section-alt); border-radius:8px; border:1px solid rgba(0,0,0,0.05); transition:border-color 0.2s,box-shadow 0.2s; }
-  .milestone:hover { border-color:rgba(201,168,76,0.35); box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+  .milestone:hover { border-color:rgba(176,184,196,0.5); box-shadow:0 4px 20px rgba(0,0,0,0.06); }
   .milestone-icon { width:46px; height:46px; background:linear-gradient(135deg,var(--navy),var(--navy-light)); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1.25rem; flex-shrink:0; }
-  .milestone-label { font-size:0.7rem; color:var(--gold); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.3rem; }
+  .milestone-label { font-size:0.7rem; color:var(--silver); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.3rem; }
   .milestone-title { font-weight:700; color:var(--navy); margin-bottom:0.4rem; font-size:0.98rem; }
   .milestone-text { font-size:0.87rem; color:#667; line-height:1.65; }
   .journey-visual { position:sticky; top:100px; }
   .progress-card { background:var(--navy); border-radius:12px; padding:2.25rem; color:var(--white); margin-bottom:1.5rem; position:relative; overflow:hidden; }
-  .progress-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); }
-  .progress-title { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--gold); margin-bottom:1.5rem; }
+  .progress-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--silver),var(--silver-bright)); }
+  .progress-title { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--silver-light); margin-bottom:1.5rem; }
   .progress-stat { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.75rem; padding-bottom:0.75rem; border-bottom:1px solid rgba(255,255,255,0.07); }
   .progress-stat:last-of-type { border-bottom:none; margin-bottom:0; }
   .psl { font-size:0.82rem; color:var(--slate); }
   .psv { font-weight:700; color:var(--white); font-size:0.98rem; }
   .progress-bar-wrap { background:rgba(255,255,255,0.08); border-radius:20px; height:8px; margin-top:1.5rem; overflow:hidden; }
-  .progress-bar-fill { height:100%; background:linear-gradient(90deg,var(--gold),var(--gold-light)); border-radius:20px; width:0; transition:width 1.8s ease; }
+  .progress-bar-fill { height:100%; background:linear-gradient(90deg,var(--silver),var(--silver-bright)); border-radius:20px; width:0; transition:width 1.8s ease; }
   .progress-bar-label { font-size:0.73rem; color:var(--slate); margin-top:0.5rem; }
-  .quote-card { background:var(--section-alt); border-left:4px solid var(--gold); padding:1.5rem 2rem; border-radius:0 8px 8px 0; font-style:italic; color:#445; line-height:1.75; font-size:0.98rem; }
-  .quote-card cite { display:block; margin-top:0.75rem; font-style:normal; font-weight:600; font-size:0.8rem; color:var(--gold); }
+  .quote-card { background:var(--section-alt); border-left:4px solid var(--silver); padding:1.5rem 2rem; border-radius:0 8px 8px 0; font-style:italic; color:#445; line-height:1.75; font-size:0.98rem; }
+  .quote-card cite { display:block; margin-top:0.75rem; font-style:normal; font-weight:600; font-size:0.8rem; color:var(--silver); }
 
   /* AI */
   #ai { background:var(--navy); position:relative; overflow:hidden; }
-  .ai-bg-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px); background-size:40px 40px; }
+  .ai-bg-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(176,184,196,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(176,184,196,0.05) 1px,transparent 1px); background-size:40px 40px; }
   #ai .section-title { color:var(--white); }
   #ai .section-subtitle { color:var(--slate); }
+  #ai .section-eyebrow { color:var(--silver-light); }
   .ai-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-bottom:2.5rem; }
-  .ai-card { background:rgba(255,255,255,0.04); border:1px solid rgba(201,168,76,0.15); border-radius:8px; padding:2rem; transition:border-color 0.2s,background 0.2s; }
-  .ai-card:hover { border-color:rgba(201,168,76,0.4); background:rgba(255,255,255,0.06); }
+  .ai-card { background:rgba(255,255,255,0.04); border:1px solid rgba(176,184,196,0.15); border-radius:8px; padding:2rem; transition:border-color 0.2s,background 0.2s; }
+  .ai-card:hover { border-color:rgba(176,184,196,0.45); background:rgba(255,255,255,0.06); }
   .ai-card-icon { font-size:1.8rem; margin-bottom:1rem; }
   .ai-card-title { color:var(--white); font-weight:700; margin-bottom:0.5rem; font-size:0.98rem; }
   .ai-card-text { color:var(--slate); font-size:0.85rem; line-height:1.65; }
-  .built-badge { display:inline-flex; align-items:center; gap:0.75rem; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.3); border-radius:8px; padding:1.25rem 2rem; color:var(--gold-light); font-size:0.88rem; }
-  .built-badge strong { color:var(--gold); font-weight:700; }
+  .built-badge { display:inline-flex; align-items:center; gap:0.75rem; background:rgba(176,184,196,0.1); border:1px solid rgba(176,184,196,0.3); border-radius:8px; padding:1.25rem 2rem; color:var(--silver-light); font-size:0.88rem; }
+  .built-badge strong { color:var(--silver-bright); font-weight:700; }
 
   /* BLOG */
   #blog { background:var(--section-alt); }
@@ -134,14 +136,14 @@
   .blog-card { background:var(--white); border-radius:8px; overflow:hidden; border:1px solid rgba(0,0,0,0.06); transition:transform 0.2s,box-shadow 0.2s; }
   .blog-card:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,0.1); }
   .blog-card-header { background:linear-gradient(135deg,var(--navy),var(--navy-light)); padding:1.75rem; position:relative; }
-  .blog-card-header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--gold); }
-  .blog-cat { font-family:'DM Mono',monospace; font-size:0.67rem; color:var(--gold); text-transform:uppercase; letter-spacing:0.15em; margin-bottom:0.5rem; }
+  .blog-card-header::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--silver); }
+  .blog-cat { font-family:'DM Mono',monospace; font-size:0.67rem; color:var(--silver-light); text-transform:uppercase; letter-spacing:0.15em; margin-bottom:0.5rem; }
   .blog-title { font-family:'Playfair Display',serif; font-size:1.08rem; color:var(--white); font-weight:700; line-height:1.35; }
   .blog-card-body { padding:1.5rem; }
   .blog-excerpt { font-size:0.85rem; color:#667; line-height:1.65; margin-bottom:1rem; }
   .blog-meta { display:flex; justify-content:space-between; align-items:center; font-size:0.75rem; color:#99a; }
-  .blog-read-more { color:var(--gold); text-decoration:none; font-weight:600; font-size:0.8rem; display:inline-flex; align-items:center; gap:0.3rem; transition:gap 0.2s; }
-  .blog-read-more:hover { gap:0.6rem; }
+  .blog-read-more { color:var(--silver); text-decoration:none; font-weight:600; font-size:0.8rem; display:inline-flex; align-items:center; gap:0.3rem; transition:gap 0.2s; }
+  .blog-read-more:hover { gap:0.6rem; color:var(--navy); }
 
   /* CONTACT */
   #contact { background:var(--white); }
@@ -150,22 +152,22 @@
   .contact-icon { width:42px; height:42px; background:var(--navy); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; }
   .contact-detail strong { display:block; font-weight:600; color:var(--navy); margin-bottom:0.2rem; font-size:0.92rem; }
   .contact-detail span, .contact-detail a { color:#667; font-size:0.86rem; }
-  .contact-detail a { color:var(--gold); text-decoration:none; }
-  .contact-detail a:hover { text-decoration:underline; }
+  .contact-detail a { color:var(--silver); text-decoration:none; }
+  .contact-detail a:hover { text-decoration:underline; color:var(--navy); }
   .form-group { margin-bottom:1.1rem; }
   .form-group label { display:block; font-size:0.76rem; font-weight:600; color:var(--navy); margin-bottom:0.4rem; letter-spacing:0.05em; text-transform:uppercase; }
   .form-group input,.form-group textarea { width:100%; padding:0.82rem 1rem; background:var(--section-alt); border:1px solid rgba(0,0,0,0.12); border-radius:4px; font-family:'DM Sans',sans-serif; font-size:0.9rem; color:var(--navy); outline:none; transition:border-color 0.2s,box-shadow 0.2s; }
-  .form-group input:focus,.form-group textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(201,168,76,0.12); }
+  .form-group input:focus,.form-group textarea:focus { border-color:var(--silver); box-shadow:0 0 0 3px rgba(176,184,196,0.2); }
   .form-group textarea { resize:vertical; min-height:115px; }
   .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
   .btn-submit { background:var(--navy); color:var(--white); border:2px solid var(--navy); padding:0.88rem 2.5rem; border-radius:4px; font-family:'DM Sans',sans-serif; font-size:0.88rem; font-weight:600; cursor:pointer; width:100%; letter-spacing:0.04em; transition:all 0.2s; }
-  .btn-submit:hover { background:var(--gold); border-color:var(--gold); color:var(--navy); }
+  .btn-submit:hover { background:var(--silver); border-color:var(--silver); color:var(--navy); }
 
   /* FOOTER */
-  footer { background:var(--navy); padding:2.5rem 3rem; border-top:1px solid rgba(201,168,76,0.15); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
-  .footer-logo { font-family:'Playfair Display',serif; color:var(--gold); font-size:1.15rem; font-weight:700; }
+  footer { background:var(--navy); padding:2.5rem 3rem; border-top:1px solid rgba(176,184,196,0.15); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+  .footer-logo { font-family:'Playfair Display',serif; color:var(--silver-light); font-size:1.15rem; font-weight:700; }
   .footer-copy { color:rgba(255,255,255,0.28); font-size:0.78rem; }
-  .footer-built { font-family:'DM Mono',monospace; font-size:0.68rem; color:rgba(201,168,76,0.42); letter-spacing:0.1em; }
+  .footer-built { font-family:'DM Mono',monospace; font-size:0.68rem; color:rgba(176,184,196,0.4); letter-spacing:0.1em; }
 
   /* ANIMATION */
   @keyframes fadeUp { from{opacity:0;transform:translateY(24px);} to{opacity:1;transform:translateY(0);} }
@@ -238,28 +240,25 @@
     <div class="about-grid">
       <div class="about-portrait">
         <div class="portrait-frame">
-          <!--
-            ADD YOUR PHOTO:
-            1. Go to your LinkedIn profile
-            2. Right-click your headshot → "Open image in new tab"
-            3. Copy that URL
-            4. Replace the div below with:
-               <img src="PASTE_URL_HERE" alt="Michael Berbert">
-          -->
-          <div class="portrait-initials">MB</div>
+          <img
+            src="https://www.dropbox.com/scl/fi/taoxmkevcjo6fprmt275l/michael.berbert-tadigital.com-4-of-7.jpg?rlkey=i5s5a0961sg2svcskkts5h9rk&st=dkk7sw3a&dl=1"
+            alt="Michael Berbert"
+            onerror="this.style.display='none'; document.getElementById('initials').style.display='flex';"
+          >
+          <div id="initials" style="display:none; font-family:'Playfair Display',serif; font-size:5rem; color:var(--silver-light); font-weight:700;">MB</div>
           <div class="portrait-badge">Saratoga Springs, Utah</div>
         </div>
       </div>
 
       <div class="about-text reveal">
         <p class="section-eyebrow">About Me</p>
-        <div class="gold-line"></div>
+        <div class="silver-line"></div>
         <h2 class="section-title">Adobe Ecosystem Expert. Strategic Leader. Always Improving.</h2>
         <p>I'm Michael Berbert — a Strategic Alliance Director with over 15 years of deep Adobe ecosystem experience, having spent nearly a decade inside Adobe Systems itself before taking on progressive Director-level alliance roles at leading Adobe SIs and technology partners.</p>
-        <p>My career has been built on relationships, results, and relentless execution. I've elevated partner organizations from Bronze to Gold and all the way to <strong>Global Platinum</strong> — the highest tier in the Adobe Solution Partner Program — and I've consistently exceeded quota while doing it. I don't just manage partnerships; I transform them.</p>
+        <p>My career has been built on relationships, results, and relentless execution. I've elevated partner organizations from Bronze to Gold and all the way to <strong>Global Platinum</strong> — the highest tier in the Adobe Solution Partner Program — and consistently exceeded quota doing it. I don't just manage partnerships; I transform them.</p>
         <p>I hold an MBA from Utah State University and a BS in Business Management from Brigham Young University. I'm also fully bilingual in English and Spanish — a skill forged during a 24-month volunteer mission in Santiago, Chile that shaped my ability to build trust across cultures.</p>
-        <p>Beyond the professional arena, I'm engaged in one of the most meaningful challenges of my life: a significant personal health transformation. I'm applying the same systems thinking, discipline, and data-driven rigor that drives my professional results to my own wellbeing — and the results are already showing.</p>
-        <p>This website itself is a proof of concept for something I believe deeply: that AI collaboration is the defining professional skill of the next decade. Every element here was built in partnership with Claude, Anthropic's AI.</p>
+        <p>Beyond the professional arena, I'm engaged in one of the most meaningful challenges of my life: a significant personal health transformation. I apply the same systems thinking, discipline, and data-driven rigor that drives my professional results to my own wellbeing — and the results are already showing.</p>
+        <p>This website is itself a proof of concept: every element was built in partnership with Claude, Anthropic's AI — a live demonstration of what I believe is the defining professional skill of the next decade.</p>
 
         <div class="about-highlights">
           <div class="highlight-item"><div class="highlight-icon">🤝</div><div class="highlight-text">Adobe Alliance & Channel Expert</div></div>
@@ -289,12 +288,11 @@
 <section id="career">
   <div class="container">
     <p class="section-eyebrow reveal">Career & Experience</p>
-    <div class="gold-line reveal"></div>
+    <div class="silver-line reveal"></div>
     <h2 class="section-title reveal">15+ Years Inside the Adobe Ecosystem</h2>
     <p class="section-subtitle reveal">From pioneering a new partner sales role inside Adobe to achieving Global Platinum status at leading SIs — a career defined by trust, execution, and results.</p>
 
     <div class="timeline">
-
       <div class="timeline-item reveal">
         <div class="timeline-dot current"></div>
         <div class="timeline-meta">January 2025 — Present</div>
@@ -343,7 +341,7 @@
         <div class="timeline-role">Director of Strategic Alliances</div>
         <div class="timeline-company">TA Digital · Remote</div>
         <div class="timeline-desc"><ul>
-          <li>Became the <strong>first Adobe partner to earn and maintain 6 Marketing Cloud Specializations</strong>, differentiating TA Digital in a highly competitive market.</li>
+          <li>Became the <strong>first Adobe partner to earn and maintain 6 Marketing Cloud Specializations</strong>, differentiating TA Digital in a competitive market.</li>
           <li>Attained and maintained <strong>Global Platinum Partner Status</strong> — the highest tier in the Adobe Solution Partner Program.</li>
           <li>Cultivated strategic relationships with Adobe and Acquia to drive pipeline growth across digital experience practices.</li>
           <li>Authored monthly partner newsletters showcasing capabilities, wins, and partnership milestones.</li>
@@ -366,7 +364,6 @@
         </ul></div>
         <div class="timeline-tags"><span class="tag">Adobe Systems</span><span class="tag">129% Quota</span><span class="tag">Partner Pipeline</span><span class="tag">Reseller Agreements</span><span class="tag">8+ Years</span></div>
       </div>
-
     </div>
 
     <div class="edu-grid reveal">
@@ -392,7 +389,7 @@
     <div class="journey-grid">
       <div>
         <p class="section-eyebrow reveal">Personal Journey</p>
-        <div class="gold-line reveal"></div>
+        <div class="silver-line reveal"></div>
         <h2 class="section-title reveal">The Hardest Project I've Ever Led</h2>
         <p class="section-subtitle reveal">On April 23, 2026 I stepped on the scale at 401.2 lbs and committed to change. Sixteen days later I'm at 397 — and I'm just getting started.</p>
 
@@ -426,7 +423,7 @@
             <div>
               <div class="milestone-label">May 9, 2026 — Day 16</div>
               <div class="milestone-title">397 lbs — 4.2 lbs Down & Momentum Building</div>
-              <p class="milestone-text">Early days, but the direction is right and the habits are forming. Every pound lost is a proof point. The discipline required to lead this journey is the same discipline that drives results in every other area of life.</p>
+              <p class="milestone-text">Early days, but the direction is right and the habits are forming. Every pound lost is a proof point. The discipline required to lead this journey is the same that drives results in every area of life.</p>
             </div>
           </div>
         </div>
@@ -436,15 +433,15 @@
         <div class="progress-card">
           <div class="progress-title">📊 Live Journey Stats</div>
           <div class="progress-stat"><span class="psl">Start Weight (Apr 23, 2026)</span><span class="psv">401.2 lbs</span></div>
-          <div class="progress-stat"><span class="psl">Current Weight (May 9, 2026)</span><span class="psv" style="color:var(--gold-light);">397.0 lbs</span></div>
+          <div class="progress-stat"><span class="psl">Current Weight (May 9, 2026)</span><span class="psv" style="color:var(--silver-light);">397.0 lbs</span></div>
           <div class="progress-stat"><span class="psl">Lost So Far</span><span class="psv" style="color:#7ecf7e;">↓ 4.2 lbs</span></div>
           <div class="progress-stat"><span class="psl">Days In</span><span class="psv">16 Days</span></div>
           <div class="progress-stat"><span class="psl">Avg Loss / Day</span><span class="psv">~0.26 lbs</span></div>
-          <div class="progress-stat"><span class="psl">Momentum</span><span class="psv" style="color:var(--gold-light);">✓ Active & Trending Down</span></div>
+          <div class="progress-stat"><span class="psl">Momentum</span><span class="psv" style="color:var(--silver-light);">✓ Active & Trending Down</span></div>
           <div class="progress-bar-wrap">
             <div class="progress-bar-fill" id="progressBar"></div>
           </div>
-          <div class="progress-bar-label">Day 16 of the journey — 4.2 lbs in the right direction</div>
+          <div class="progress-bar-label">Day 16 — 4.2 lbs in the right direction</div>
         </div>
         <blockquote class="quote-card">
           "The same discipline that earns a Global Platinum partnership is what transforms a life. Define the goal. Build the system. Execute relentlessly. Let the data lead."
@@ -460,7 +457,7 @@
   <div class="ai-bg-grid"></div>
   <div class="container" style="position:relative;z-index:2;">
     <p class="section-eyebrow reveal">AI Collaboration</p>
-    <div class="gold-line reveal"></div>
+    <div class="silver-line reveal"></div>
     <h2 class="section-title reveal">Built With Claude. Powered by Partnership.</h2>
     <p class="section-subtitle reveal">This entire website was conceived, designed, and built in collaboration with Claude — Anthropic's AI. It's not just a portfolio; it's a live proof of concept for the defining professional skill of the next decade.</p>
     <div class="ai-cards">
@@ -472,7 +469,7 @@
       <div class="ai-card reveal">
         <div class="ai-card-icon">⚡</div>
         <div class="ai-card-title">Compressed Time-to-Value</div>
-        <p class="ai-card-text">A professional-grade, fully personalized website — built in a single session using my own resume and personal data. Output that once required weeks of agency work is now possible in hours with the right human-AI partnership.</p>
+        <p class="ai-card-text">A professional-grade, fully personalized website built in a single session using my own resume and personal data. Output that once required weeks of agency work is now possible in hours with the right human-AI partnership.</p>
       </div>
       <div class="ai-card reveal">
         <div class="ai-card-icon">🔄</div>
@@ -491,7 +488,7 @@
 <section id="blog">
   <div class="container">
     <p class="section-eyebrow reveal">Investing Blog</p>
-    <div class="gold-line reveal"></div>
+    <div class="silver-line reveal"></div>
     <h2 class="section-title reveal">Market Insights & Investment Thinking</h2>
     <p class="section-subtitle reveal">Ongoing thoughts on markets, technology investing, and capital allocation — written with the same rigor I bring to partnership strategy.</p>
     <div class="blog-grid">
@@ -542,10 +539,9 @@
     <div class="contact-grid">
       <div class="reveal">
         <p class="section-eyebrow">Get In Touch</p>
-        <div class="gold-line"></div>
+        <div class="silver-line"></div>
         <h2 class="section-title">Let's Connect</h2>
         <p style="color:#667;line-height:1.78;margin-bottom:2.5rem;font-size:0.96rem;">Whether you want to discuss Adobe partnerships, AI collaboration, investing, or my personal journey — I'd love to hear from you.</p>
-
         <div class="contact-item">
           <div class="contact-icon">📍</div>
           <div class="contact-detail"><strong>Location</strong><span>Saratoga Springs, Utah</span></div>
@@ -592,31 +588,23 @@
 </footer>
 
 <script>
-  // Scroll reveal
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
   }, {threshold: 0.1});
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Progress bar animation
   const barObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if(e.isIntersecting) {
-        // 4.2 lbs lost, displaying as early-stage momentum indicator
-        document.getElementById('progressBar').style.width = '4.2%';
-      }
-    });
+    entries.forEach(e => { if(e.isIntersecting) document.getElementById('progressBar').style.width = '4.2%'; });
   }, {threshold: 0.5});
   const bar = document.getElementById('progressBar');
   if(bar) barObs.observe(bar);
 
-  // Active nav
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
     let cur = '';
     sections.forEach(s => { if(window.scrollY >= s.offsetTop - 100) cur = s.id; });
-    navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--gold)' : ''; });
+    navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--silver-light)' : ''; });
   });
 </script>
 </body>
