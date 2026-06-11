@@ -29,7 +29,7 @@
   .nav-cta:hover { background:var(--silver-bright) !important; }
 
   /* HERO */
-  #hero { min-height:100vh; background:var(--navy); display:flex; align-items:center; position:relative; overflow:hidden; }
+  #hero { min-height:auto; background:var(--navy); display:flex; align-items:center; position:relative; overflow:hidden; }
   .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(176,184,196,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(176,184,196,0.05) 1px,transparent 1px); background-size:60px 60px; }
   .hero-glow { position:absolute; top:-20%; right:-10%; width:600px; height:600px; background:radial-gradient(circle,rgba(176,184,196,0.1) 0%,transparent 70%); pointer-events:none; }
   .hero-content { position:relative; z-index:2; max-width:1200px; margin:0 auto; padding:5rem 3rem 3rem; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
@@ -526,9 +526,10 @@
     <div style="text-align:center;margin-top:3rem;" class="reveal">
       <p style="color:#889;font-size:0.86rem;margin-bottom:1rem;">Full blog launching soon. Enter your email to be notified when the first post goes live.</p>
       <div style="display:flex;gap:0.75rem;justify-content:center;max-width:420px;margin:0 auto;">
-        <input type="email" placeholder="your@email.com" style="flex:1;padding:0.75rem 1rem;border:1px solid rgba(0,0,0,0.15);border-radius:4px;font-family:inherit;font-size:0.86rem;outline:none;background:var(--white);">
-        <button class="btn-primary" style="border:none;cursor:pointer;white-space:nowrap;padding:0.75rem 1.5rem;">Notify Me</button>
+        <input type="email" id="notify-email" placeholder="your@email.com" style="flex:1;padding:0.75rem 1rem;border:1px solid rgba(0,0,0,0.15);border-radius:4px;font-family:inherit;font-size:0.86rem;outline:none;background:var(--white);">
+        <button id="notify-btn" class="btn-primary" style="border:none;cursor:pointer;white-space:nowrap;padding:0.75rem 1.5rem;">Notify Me</button>
       </div>
+      <div id="notify-status" style="display:none;margin-top:0.75rem;font-size:0.86rem;"></div>
     </div>
   </div>
 </section>
@@ -606,6 +607,24 @@
     let cur = '';
     sections.forEach(s => { if(window.scrollY >= s.offsetTop - 100) cur = s.id; });
     navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--silver-light)' : ''; });
+  });
+
+  // Notify Me handler
+  document.getElementById('notify-btn').addEventListener('click', function() {
+    const email = document.getElementById('notify-email').value.trim();
+    const status = document.getElementById('notify-status');
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      status.style.display = 'block';
+      status.style.color = '#721c24';
+      status.textContent = 'Please enter a valid email address.';
+      return;
+    }
+    const mailto = `mailto:michaelb@nextrow.com?subject=Blog Notification Signup&body=Please add me to the blog notification list: ${encodeURIComponent(email)}`;
+    window.location.href = mailto;
+    status.style.display = 'block';
+    status.style.color = '#1a5c2e';
+    status.textContent = '✓ Your email client should open to confirm. Thanks for signing up!';
+    document.getElementById('notify-email').value = '';
   });
 
   // Contact form handler
